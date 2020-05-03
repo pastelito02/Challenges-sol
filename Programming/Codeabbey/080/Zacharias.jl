@@ -15,20 +15,20 @@ function engine(p::Array{Int64, 1})
   wins = zeros(2)
 
   for i = 1:n
-      OK = trues(2)
-      turn = 1
+    OK = trues(2)
+    turn = 1
 
-      while all(OK)
-          other = 3 - turn
-          r = rand()
+    while all(OK)
+      other = 3 - turn
+      r = rand()
 
-          if r < p[turn]
-              OK[other] = false
-              wins[turn] += 1
-          end
-
-          turn = other
+      if r < p[turn]
+        OK[other] = false
+        wins[turn] += 1
       end
+
+      turn = other
+    end
   end
 
   return round(Int64, 100 * wins[1] / n)
