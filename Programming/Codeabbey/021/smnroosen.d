@@ -1,3 +1,5 @@
+module GitHub.Challenges-sol.Programming.Codeabbey.021.smnroosen;
+
 //Author smnroosen
 import std.stdio;
 import std.algorithm;
