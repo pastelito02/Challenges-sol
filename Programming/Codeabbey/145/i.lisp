@@ -1,0 +1,17 @@
+;Author i
+(defun modular-exponentiation (list)
+  (let ((A (car list))
+        (B (cadr list))
+        (M (caddr list)))
+    (cond ((= B 0) 1)
+          ((evenp B) (calc-eval "($^2)%$$ " nil (modular-exponentiation (list A (/ B 2) M)) M))
+          (t (calc-eval "($*$$^2)%$$$ " nil A (modular-exponentiation (list A (/ B 2) M)) M)))))
+
+(defun ljg-moduar-exponentiation-solution (file)
+  (let ((temp (cdr (read-multi-lines-file file))))
+    (setq temp (mapcar (lambda (str)
+                         (mapcar #'string-to-number (split-string str)))
+                       temp))
+    (mapc (lambda (x)
+            (princ (format "%s " (modular-exponentiation x))))
+          temp)))
