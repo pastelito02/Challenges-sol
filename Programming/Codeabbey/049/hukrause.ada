@@ -1,4 +1,4 @@
-//Author hukrause
+--Author hukrause
 with Ada.Text_IO;
 with Ada.Integer_Text_IO;
 with Ada.Strings.Unbounded;
