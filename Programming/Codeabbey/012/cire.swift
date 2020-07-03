@@ -1,4 +1,4 @@
---Author cire
+//Author cire
 let input = """
 11
 0 7 47 21 0 21 33 27
