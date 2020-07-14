@@ -1,0 +1,23 @@
+*g964
+MODULE Solution
+  IMPLICIT NONE
+CONTAINS
+  INTEGER FUNCTION movie(card, ticket, perc) RESULT(cnt)
+    INTEGER, PARAMETER :: ikind=selected_real_kind(p=18)
+    REAL(kind=ikind):: perc, sb, prev, nou
+    INTEGER :: card, ticket, i, sa, lp
+
+    i = 0; sa = 0; sb = REAL(card, ikind); lp = 1; prev = REAL(ticket, ikind)
+    DO WHILE(lp == 1)
+      i = i + 1
+      nou = prev * perc
+      sb = sb + nou
+      prev = nou
+      sa = sa + ticket
+      IF (CEILING(sb) < sa) THEN
+        EXIT
+      END IF
+    END DO
+    cnt = i
+  END FUNCTION movie
+END MODULE Solution
