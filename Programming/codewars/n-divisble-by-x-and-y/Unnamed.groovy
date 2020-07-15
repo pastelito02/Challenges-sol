@@ -1,0 +1,6 @@
+/*Unnamed*/
+class Kata {
+  static boolean isDivisible(n, x, y) {
+    n % x == 0 && n % y == 0
+  }
+}
